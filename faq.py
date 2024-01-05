@@ -1,7 +1,11 @@
 import MeCab
 import jaconv
 import json
-from typing import Literal, Dict, List
+from typing import Dict, List
+try:
+  from typing import Literal
+except:
+  from typing_extensions import Literal
 m = MeCab.Tagger()
 
 def tokenize(text: str, dict_type: Literal["unidic_lite", "neologd"] = "unidic_lite"
