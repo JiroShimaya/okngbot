@@ -105,7 +105,7 @@ if __name__ == "__main__":
   CONF_PATH = args.config_path
   PORT = int(args.port)
 
-  with open(CONF_PATH) as f:
+  with open(CONF_PATH, encoding="utf-8") as f:
     auth_token = json.load(f)
   LineManagers = {}
   for k, v in auth_token.items():

@@ -89,7 +89,7 @@ class Faq:
       self.botanswer = json.load(f)
     
     if "simwords" in config and os.path.exists(config["simwords"]):
-      with open(config["simwords"]) as f:
+      with open(config["simwords"], encoding="utf-8") as f:
         self.simwords = json.load(f)
     else:
       titles = [v for v in self.botanswer]
@@ -149,7 +149,7 @@ if __name__ == "__main__":
 
   args = parser.parse_args()
 
-  with open(args.config_path) as f:
+  with open(args.config_path, encoding="utf-8") as f:
     config = json.load(f)
   faq = Faq(config[args.config_key])
   print("config_path and key:", args.config_path, args.config_key)
@@ -166,6 +166,6 @@ if __name__ == "__main__":
       botanswer = json.load(f)
     botanswer_titles = list(botanswer.keys())
     simwords = make_simwords_list(botanswer_titles)
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
       json.dump(simwords, f,indent=2, ensure_ascii=False)
 
