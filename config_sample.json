@@ -1,0 +1,8 @@
+{
+  "sample": {
+    "channel_secret": "",
+    "channel_access_token": "",
+    "botanswer": "data/botanswer_sample.json",
+    "search_word": "とは"
+  }
+}
