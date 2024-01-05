@@ -92,8 +92,7 @@ class LineManager:
     return 'OK'
 
 #変更①。line_bot_apiをチャンネルごとに宣言する。チャンネルアクセストークン、チャンネルシークレットは別途jsonファイルから取得
-if __name__ == "__main__":
-
+if True:
   import json, os
   import argparse
 
@@ -116,6 +115,7 @@ if __name__ == "__main__":
       endpoint = f"{k}_callback"  # 各マネージャーに対してユニークなエンドポイント名を生成
       app.add_url_rule(f"/{k}/callback", endpoint, manager.callback, methods=['POST'])  
 
+if __name__ == "__main__":
       #外部からの接続を受け付けられるようにした上で、port番号を指定して、立ち上げ
   #    app.run()
   app.run(host="0.0.0.0", port=PORT)
