@@ -1,3 +1,10 @@
+.DS_Store
+config.json
+*.ipynb
+/data/*
+!/data/botanswer_sample.json
+.cursorignore
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
